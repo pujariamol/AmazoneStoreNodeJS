@@ -1,0 +1,31 @@
+extends layout
+
+block welcome
+	ul.nav.navbar-nav.navbar-right
+		li
+			a Welcome, #{username} 
+
+block content
+	div(align="center")
+		h3 Enter new product details below
+		b 
+			div#notification
+		div(style="width:50%",align="center")
+			select.form-control#categoryId(onblur="addToJSON(this)",placeholder="Select a category")
+				for category in categories
+					option.form-control(value="#{category.identifier}") #{category.name}
+			br
+			input.form-control#productName(onblur="addToJSON(this)",placeholder="Product Name")
+			br
+			input.form-control#brandName(onblur="addToJSON(this)",placeholder="Brand Name")
+			br
+			textarea.form-control(onblur="addToJSON(this)",type="textarea",rows="2")#description(placeholder="Description")
+			br
+			div.input-group
+				span.input-group-addon $
+				input.form-control#price(onblur="addToJSON(this)",placeholder="Enter price per unit")
+			br
+			input.form-control(type="textarea")#inStock(onblur="addToJSON(this)",placeholder="Quantity Available In Stock")
+			br
+			button.btn.btn-primary.btn-block#submit(onclick="addProduct()") 
+				b ADD

@@ -1,0 +1,23 @@
+extends layout
+
+block operations
+	ul.nav.navbar-nav
+		li
+			a(href='/signIn') Sign In
+block content
+	div(align="center", height="100%")
+		div(style="width:30%")
+			h1 SignUp Page
+			b
+				div#notification(style="width:100%")
+			input.form-control#firstName(onblur="addToJSON(this)",placeholder="Enter First Name")
+			br
+			input.form-control#lastName(onblur="addToJSON(this)",placeholder="Enter Last Name")
+			br
+			input.form-control#emailId(onblur="addToJSON(this)",placeholder="Enter Email Id")
+			br
+			input.form-control#pwd(type="password",onblur="addToJSON(this)",placeholder="Enter Password")
+			br
+			input.form-control#confirmPwd(type="password",onblur="addToJSON(this)",placeholder="Re-enter Password for confirmation")
+			br
+			button.btn.btn-primary.btn-block#submit(onclick="signUp()") Sign Up

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	div(align="center")
+		div(style="width:30%")
+			b
+				div#notification
+			input.form-control#emailId(placeholder="Email Address", onblur="addToJSON(this)") 
+			&nbsp
+			input.form-control#password(type="password",placeholder="Password",onblur="addToJSON(this)")
+			br
+			button.btn.btn-primary.btn-block#submit(onclick="login()") Submit

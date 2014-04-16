@@ -1,0 +1,28 @@
+doctype html
+html
+	include head
+		body(role='developer')
+			block header
+				.navbar.navbar-default.navbar-static-top(role='navigation')
+					.container
+						.navbar-header
+						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+							span.sr-only Toggle navigation
+							span.icon-bar
+							span.icon-bar
+							span.icon-bar
+						a.navbar-brand(href='#') Junior Amazon
+						.collapse.navbar-collapse
+							block operations
+								ul.nav.navbar-nav
+									li
+										a(href='/signUp') Sign Up
+							ul.nav.navbar-nav.navbar-right
+								li
+									a(href='/logout') Logout
+							block welcome
+								ul.nav.navbar-nav.navbar-right
+									li
+										a Welcome, Guest
+							block details
+			block content

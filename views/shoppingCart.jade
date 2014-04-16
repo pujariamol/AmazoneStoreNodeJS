@@ -1,0 +1,31 @@
+extends catalog
+
+block content
+	block showCase
+		b
+			div#notification
+		div.total
+			label Total :   
+			label#totalAmountLbl &nbsp &nbsp $ #{total}
+		div.shoppingCartItems
+			if products && products != 0
+				for product in products
+					div.itemStyle(id='#{product.IDENTIFIER}')
+						b
+							li= product.BRAND
+						li= product.PRODUCT_NAME
+						li= product.DESCRIPTION
+						li(style="color:blue;font-weight:bold")  Quantity : #{product.ORDERED_QUANTITY} 
+						li(style="color:green;font-weight:bold") Price : $ #{product.PRICE}
+						
+			else
+				p No Product In Shopping Cart
+		div.payment(align="center")
+			div(style="padding-bottom:15px")
+				label Enter your card information
+			div(style="width:50%")
+				input.form-control#nameOnCard(placeholder="Name on card")
+				br
+				input.form-control#cardNumber(placeholder="Card Number")
+				br
+			button.btn.btn-primary#payBtn(style="margin:15px",onclick="makePayment()") Make Payment

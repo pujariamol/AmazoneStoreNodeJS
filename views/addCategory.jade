@@ -1,0 +1,17 @@
+extends layout
+
+block welcome
+	ul.nav.navbar-nav.navbar-right
+		li
+			a Welcome, #{username}  
+
+block content
+	div(align="center")
+		h3 Enter new category details below 
+		b
+			div#notification
+		div(style="width:50%",align="center")
+			input.form-control#categoryName(placeholder="Category Name")
+			br
+			button.btn.btn-primary.btn-block#submit(onclick="addCategory()") 
+				b ADD Category

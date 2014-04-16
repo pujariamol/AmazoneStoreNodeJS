@@ -1,0 +1,52 @@
+extends layout
+
+block welcome
+	ul.nav.navbar-nav.navbar-right
+		li
+			a Welcome, #{username} 
+	
+block details
+		ul.nav.navbar-nav.navbar-left
+			li(style="margin:10px 200px 0px 10px")
+				div.btn-group
+					button.btn.btn-info.dropdown-toggle(type='button', data-toggle='dropdown',id='categoryDropdown') #{selectedCategory.name}  
+						span.caret
+					ul.dropdown-menu(role='menu')
+						for category in categories
+							li
+								a(onclick="dropdownHandling(this)",id="#{category.identifier}") #{category.name}
+		ul.nav.navbar-nav.navbar-right
+			li(style="margin:15px 10px 10px 10px")
+				div 
+					b
+						p Cart : 
+							label#cartItemCount #{count}
+			li(style="margin:10px")
+				button.btn.btn-success.btn-sm#checkout(onclick="checkout()") Checkout
+		
+block content
+	label(style="margin-bottom:10px;") Last Login Time : '#{lastLoginTime}'	
+	block showCase
+		b
+			div#notification
+		div(align="center", height="100%")
+			if products && products.length != 0
+				for product in products
+					div.itemContainer
+						div.itemStyle
+							b
+								li= product.BRAND
+							i 
+								li  Model : #{product.PRODUCT_NAME}
+							b
+								li Description
+							li= product.DESCRIPTION
+							b 
+								li Price
+							li $ #{product.PRICE}
+							li #{product.QUANTITY} In Stock
+							input(value="1",id="#{product.IDENTIFIER}QuantityTxt", style="width:30px") 
+							&nbsp
+							button.btn.btn-sm.btn-primary#addToCartBtn(align="right",onclick="addToCart('#{product.IDENTIFIER}')") Add To Cart
+							&nbsp
+							button.btn.btn-danger.btn-sm#remove(align="right",onclick="removeFromCart(#{product.IDENTIFIER})") Remove

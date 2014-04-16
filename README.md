@@ -1,6 +1,5 @@
 
-
-# Lab1-Try3WithExpress
+# Amazon Store NodeJS Project
 
 
 

@@ -1,6 +1,6 @@
 # “Amazon Store” to demonstrate RESTful Services using NodeJS
 
-##Introduction
+## Introduction
 
 Developed a prototype of Amazon Online store called as 'Junior Amazon'. This includes a
 client and a server and provides below functionality.
@@ -22,12 +22,12 @@ It uses NodeJS framework and demonstrates RESTFul web services while communicati
 This project mocks the basic functionalities demonstrated by Amazon website listed
 above.
 
-###Operating Environment
+### Operating Environment
 This project uses node.js platform for it's development and uses express framework
 for working with different functionalities provided by node.js. Also, it uses restful calls for
 client-server interaction.
 
-###Files and Database Design
+### Files and Database Design
 The project maintains a separate router and view files for all of its modules at
 application level for e.g. signIn, signUp, catalog, shoppingCart etc. For an instance lets
 consider catalog module this will contain a catalog.jade for it's view and catalog.js file as
@@ -38,7 +38,7 @@ execution of the query.
 Database Design : Database contains four tables as USER, CATEGORY, PRODUCT
 and SHOPPING_CART. They share references to each other accordingly.
 
-###Human-Machine Interfaces
+### Human-Machine Interfaces
 
 As the user signIn into the application he is redirected to catalog page. Catalog page
 fetch all the product by default and shows all the items to the user. User can choose to
@@ -55,7 +55,7 @@ A different type of user called Admin can add new products and new categories to
 system. Once they are added they will be reflected to the normal user signing in into the
 system.
 
-###Processing Logic :
+### Processing Logic :
 All communication between the client and server takes place using restful calls. When
 the server starts it fetches all the data related to products and categories from the
 database and stores it into cache. So, when the user sign in and he is redirected to catalog
